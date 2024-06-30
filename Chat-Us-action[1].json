@@ -1,0 +1,2594 @@
+{
+  "name": "Chat Us-action",
+  "type": "action",
+  "valid": true,
+  "status": "Training",
+  "created": "2024-06-08T02:07:55.069Z",
+  "updated": "2024-06-30T11:06:44.460Z",
+  "language": "en",
+  "skill_id": "6f863ba4-36e0-4996-82fa-e60af14a4a6d",
+  "workspace": {
+    "actions": [
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_946",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Here are the list of Careers..!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Google career",
+                      "value": {
+                        "input": {
+                          "text": "Google career"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Microsoft career",
+                      "value": {
+                        "input": {
+                          "text": "Microsoft career"
+                        }
+                      }
+                    },
+                    {
+                      "label": "IBM career",
+                      "value": {
+                        "input": {
+                          "text": "IBM career"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Accenture carrer",
+                      "value": {
+                        "input": {
+                          "text": "Accenture carrer"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Cognizant carrer",
+                      "value": {
+                        "input": {
+                          "text": "Cognizant carrer"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Amazon career",
+                      "value": {
+                        "input": {
+                          "text": "Amazon career"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "context": {
+              "variables": []
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_45145",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_946",
+            "next_step": "step_966"
+          },
+          {
+            "step": "step_966",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "website : https://www.google.com/about/careers/applications/jobs/results#!t=jo&jid=127025001&"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_946"
+                  },
+                  "skill_variable": "Google_career"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_966",
+            "next_step": "step_354"
+          },
+          {
+            "step": "step_354",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "website : https://www.ibm.com/careers/search?field_keyword_18%5B0%5D=Intern"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_946"
+                  },
+                  "skill_variable": "IBM_career"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_354",
+            "next_step": "step_601"
+          },
+          {
+            "step": "step_601",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "website : https://careers.microsoft.com/v2/global/en/locations/bengaluru.html"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_946"
+                  },
+                  "skill_variable": "Microsoft_career"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_601",
+            "next_step": "step_517"
+          },
+          {
+            "step": "step_517",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "website : https://www.amazon.jobs/en/locations/hyderabad-india"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_946"
+                  },
+                  "skill_variable": "Amazon_career"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_517",
+            "next_step": "step_115"
+          },
+          {
+            "step": "step_115",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "website : https://careers.cognizant.com/india-en/jobs/?keyword=&location=&radius=100&lat=&lng=&cname=&ccode=&pagesize=10#results"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_946"
+                  },
+                  "skill_variable": "Cognizant_career"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_115",
+            "next_step": "step_401"
+          },
+          {
+            "step": "step_401",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "website : https://www.accenture.com/in-en/careers/local/technology-grads#tabs-007120b861"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_946"
+                  },
+                  "skill_variable": "Accenture_career"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_401"
+          }
+        ],
+        "title": "carrers",
+        "action": "action_13128",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_13128_intent_40246"
+        },
+        "variables": [
+          {
+            "title": "website : https://careers.cognizant.com/india-en/jobs/?keyword=&",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_115",
+            "data_type": "any"
+          },
+          {
+            "title": "website : https://www.ibm.com/careers/search?field_keyword_18%5B",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_354",
+            "data_type": "any"
+          },
+          {
+            "title": "website : https://www.accenture.com/in-en/careers/local/technolo",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_401",
+            "data_type": "any"
+          },
+          {
+            "title": "website : https://www.amazon.jobs/en/locations/hyderabad-india",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_517",
+            "data_type": "any"
+          },
+          {
+            "title": "website : https://careers.microsoft.com/v2/global/en/locations/b",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_601",
+            "data_type": "any"
+          },
+          {
+            "title": "Here are the list of Careers..!",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_946",
+            "data_type": "any"
+          },
+          {
+            "title": "website : https://www.google.com/about/careers/applications/jobs",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_966",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_40372",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_417",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Sure! To create a tailored cover letter, I'll need some specific information from you. Please provide the following details:\n\n\n  1. *Your Contact Information:*\n\n\n  - Full Name\n  - Phone Number\n  - Email Address\n  - Address (optional)\n2. *Date:*\n  - The date you are writing the letter.\n3. *Employer's Contact Information:*\n  - Hiring Manager's Name (if known)\n  - Company Name\n  - Company Address\n4."
+                          },
+                          {
+                            "scalar": " *Salutation:*\n  - Greeting (e.g., Dear [Hiring Manager's Name], or To Whom It May Concern,)\n5. *Introduction:*\n  - The position you are applying for.\n  - How you found out about the job opening.\n  - A brief statement about why you are interested in the position and the company.\n6. *Body:*\n  - Your relevant skills, experiences, and accomplishments that make you a good fit for the role.\n  -"
+                          },
+                          {
+                            "scalar": " Specific examples of your work that demonstrate these qualifications.\n  - How your background aligns with the company’s needs and values.\n7. *Conclusion:*\n  - A brief summary of why you are a strong candidate.\n  - A statement of appreciation for considering your application.\n  - A statement about your enthusiasm for the opportunity to discuss your application further.\n  - A closing statement (e."
+                          },
+                          {
+                            "scalar": "g., Sincerely, Best regards,)\n8. *Your Signature:*\n  - Your full name (typed)\n  - (Optional) Your handwritten signature if you are sending a hard copy.\n\nPlease provide the details, and I’ll create a customized cover letter for you!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_417",
+            "next_step": "step_649"
+          },
+          {
+            "step": "step_649",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Hi "
+                          },
+                          {
+                            "skill_variable": "Name"
+                          },
+                          {
+                            "scalar": " Sure! To create a tailored cover letter, I'll need some specific information from you. Please provide the following details:\n\n\n  1. *Your Contact Information:*\n- "
+                          },
+                          {
+                            "skill_variable": "Name"
+                          },
+                          {
+                            "scalar": "\n- "
+                          },
+                          {
+                            "skill_variable": "phone_number"
+                          },
+                          {
+                            "scalar": "\n- "
+                          },
+                          {
+                            "skill_variable": "email_address"
+                          },
+                          {
+                            "scalar": "\n- "
+                          },
+                          {
+                            "skill_variable": "Addresss"
+                          },
+                          {
+                            "scalar": "\n  2. *Date:*\n- The date you are writing the letter.\n  3. *Employer's Contact Information:*\n- Hiring Manager's Name (if known)\n- Company Name\n- Company Address\n  4. *Salutation:*\n- Greeting (e.g., Dear [Hiring Manager's Name], or To Whom It May Concern,)\n  5. *Introduction:*\n- The position you are applying for.\n- How you found out about the job opening.\n-"
+                          },
+                          {
+                            "scalar": " A brief statement about why you are interested in the position and the company.\n  6. *Body:*\n- Your relevant skills, experiences, and accomplishments that make you a good fit for the role.\n- Specific examples of your work that demonstrate these qualifications.\n- How your background aligns with the company’s needs and values.\n  7. *Conclusion:*\n- A brief summary of why you are a strong candidate."
+                          },
+                          {
+                            "scalar": "\n- A statement of appreciation for considering your application.\n- A statement about your enthusiasm for the opportunity to discuss your application further.\n- A closing statement (e.g., Sincerely, Best regards,)\n  8. *Your Signature:*\n- Your full name (typed)\n- (Optional) Your handwritten signature if you are sending a hard copy.\n\nPlease provide the details,"
+                          },
+                          {
+                            "scalar": " and I’ll create a customized cover letter for you!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_417"
+                  },
+                  "skill_variable": "Name"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_649",
+            "next_step": "step_654"
+          },
+          {
+            "step": "step_654",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Sure! To create a tailored cover letter, I'll need some specific information from you. Please provide the following details:\n\n\n  1. *Your Contact Information:*\n\n\n  - Full Name\n  - "
+                          },
+                          {
+                            "skill_variable": "phone_number"
+                          },
+                          {
+                            "scalar": "\n  - Email Address\n  - Address (optional)\n2. *Date:*\n  - The date you are writing the letter.\n3. *Employer's Contact Information:*\n  - Hiring Manager's Name (if known)\n  - Company Name\n  - Company Address\n4. *Salutation:*\n  - Greeting (e.g., Dear [Hiring Manager's Name], or To Whom It May Concern,)\n5. *Introduction:*\n  - The position you are applying for.\n  -"
+                          },
+                          {
+                            "scalar": " How you found out about the job opening.\n  - A brief statement about why you are interested in the position and the company.\n6. *Body:*\n  - Your relevant skills, experiences, and accomplishments that make you a good fit for the role.\n  - Specific examples of your work that demonstrate these qualifications.\n  - How your background aligns with the company’s needs and values.\n7. *Conclusion:*\n  -"
+                          },
+                          {
+                            "scalar": " A brief summary of why you are a strong candidate.\n  - A statement of appreciation for considering your application.\n  - A statement about your enthusiasm for the opportunity to discuss your application further.\n  - A closing statement (e.g., Sincerely, Best regards,)\n8. *Your Signature:*\n  - Your full name (typed)\n  - (Optional) Your handwritten signature if you are sending a hard copy."
+                          },
+                          {
+                            "scalar": "\n\nPlease provide the details, and I’ll create a customized cover letter for you!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "skill_variable": "create_a_resume"
+                  },
+                  "skill_variable": "phone_number"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_654",
+            "next_step": "step_142"
+          },
+          {
+            "step": "step_142",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Sure! To create a tailored cover letter, I'll need some specific information from you. Please provide the following details:\n\n\n  1. *Your Contact Information:*\n- Full Name\n- Phone Number\n- "
+                          },
+                          {
+                            "skill_variable": "email_address"
+                          },
+                          {
+                            "scalar": "\n- Address (optional)\n  2. *Date:*\n- The date you are writing the letter.\n  3. *Employer's Contact Information:*\n- Hiring Manager's Name (if known)\n- Company Name\n- Company Address\n  4. *Salutation:*\n- Greeting (e.g., Dear [Hiring Manager's Name], or To Whom It May Concern,)\n  5. *Introduction:*\n- The position you are applying for.\n- How you found out about the job opening.\n-"
+                          },
+                          {
+                            "scalar": " A brief statement about why you are interested in the position and the company.\n  6. *Body:*\n- Your relevant skills, experiences, and accomplishments that make you a good fit for the role.\n- Specific examples of your work that demonstrate these qualifications.\n- How your background aligns with the company’s needs and values.\n  7. *Conclusion:*\n- A brief summary of why you are a strong candidate."
+                          },
+                          {
+                            "scalar": "\n- A statement of appreciation for considering your application.\n- A statement about your enthusiasm for the opportunity to discuss your application further.\n- A closing statement (e.g., Sincerely, Best regards,)\n  8. *Your Signature:*\n- Your full name (typed)\n- (Optional) Your handwritten signature if you are sending a hard copy.\n\nPlease provide the details,"
+                          },
+                          {
+                            "scalar": " and I’ll create a customized cover letter for you!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_417"
+                  },
+                  "skill_variable": "email_address"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_142",
+            "next_step": "step_185"
+          },
+          {
+            "step": "step_185",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Sure! To create a tailored cover letter, I'll need some specific information from you. Please provide the following details:\n\n\n  1. *Your Contact Information:*\n\n\n  - Full Name\n  - Phone Number\n  - Email Address\n  - "
+                          },
+                          {
+                            "skill_variable": "Addresss"
+                          },
+                          {
+                            "scalar": "\n\n\n  1. *Date:*\n\n\n  - The date you are writing the letter.\n\n\n  1. *Employer's Contact Information:*\n\n\n  - Hiring Manager's Name (if known)\n  - Company Name\n  - Company Address\n\n\n  1. *Salutation:*\n\n\n  - Greeting (e.g., Dear [Hiring Manager's Name], or To Whom It May Concern,)\n\n\n  1. *Introduction:*\n\n\n  - The position you are applying for.\n  - How you found out about the job opening.\n  -"
+                          },
+                          {
+                            "scalar": " A brief statement about why you are interested in the position and the company.\n\n\n  1. *Body:*\n\n\n  - Your relevant skills, experiences, and accomplishments that make you a good fit for the role.\n  - Specific examples of your work that demonstrate these qualifications.\n  - How your background aligns with the company’s needs and values.\n\n\n  1. *Conclusion:*\n\n\n  -"
+                          },
+                          {
+                            "scalar": " A brief summary of why you are a strong candidate.\n  - A statement of appreciation for considering your application.\n  - A statement about your enthusiasm for the opportunity to discuss your application further.\n  - A closing statement (e.g., Sincerely, Best regards,)\n\n\n  1. *Your Signature:*\n\n\n  - Your full name (typed)\n  - (Optional) Your handwritten signature if you are sending a hard copy."
+                          },
+                          {
+                            "scalar": "\n\nPlease provide the details, and I’ll create a customized cover letter for you!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_417"
+                  },
+                  "skill_variable": "Addresss"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_185",
+            "next_step": "step_304"
+          },
+          {
+            "step": "step_304",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Sure! To create a tailored cover letter, I'll need some specific information from you. Please provide the following details:\n\n\n  1. *Your Contact Information:*\n- Full Name\n- Phone Number\n- Email Address\n- Address (optional)\n  2. *Date:*\n  3. "
+                          },
+                          {
+                            "skill_variable": "Date"
+                          },
+                          {
+                            "scalar": "\n  4. *Employer's Contact Information:*\n- Hiring Manager's Name (if known)\n- Company Name\n- Company Address\n  5. *Salutation:*\n- Greeting (e.g., Dear [Hiring Manager's Name], or To Whom It May Concern,)\n  6. *Introduction:*\n- The position you are applying for.\n- How you found out about the job opening.\n- A brief statement about why you are interested in the position and the company.\n  7. *Body:*\n-"
+                          },
+                          {
+                            "scalar": " Your relevant skills, experiences, and accomplishments that make you a good fit for the role.\n- Specific examples of your work that demonstrate these qualifications.\n- How your background aligns with the company’s needs and values.\n  8. *Conclusion:*\n- A brief summary of why you are a strong candidate.\n- A statement of appreciation for considering your application.\n-"
+                          },
+                          {
+                            "scalar": " A statement about your enthusiasm for the opportunity to discuss your application further.\n- A closing statement (e.g., Sincerely, Best regards,)\n  9. *Your Signature:*\n- Your full name (typed)\n- (Optional) Your handwritten signature if you are sending a hard copy.\n\nPlease provide the details, and I’ll create a customized cover letter for you!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_304"
+          }
+        ],
+        "title": "create a cover letter",
+        "action": "action_30319",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_30319_intent_15060"
+        },
+        "variables": [
+          {
+            "title": "Sure! To create a tailored cover letter, I'll need some specific",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_142",
+            "data_type": "any"
+          },
+          {
+            "title": "Sure! To create a tailored cover letter, I'll need some specific",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_185",
+            "data_type": "any"
+          },
+          {
+            "title": "Sure! To create a tailored cover letter, I'll need some specific",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_304",
+            "data_type": "any"
+          },
+          {
+            "title": "Sure! To create a tailored cover letter, I'll need some specific",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_417",
+            "data_type": "any"
+          },
+          {
+            "title": "Hi {variable} Sure! To create a tailored cover letter, I'll need",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_649",
+            "data_type": "any"
+          },
+          {
+            "title": "Sure! To create a tailored cover letter, I'll need some specific",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_654",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_8418",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_557",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Here is the list of contacts of Recruitment Team...!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "options": [
+                    {
+                      "label": "Google HR",
+                      "value": {
+                        "input": {
+                          "text": "Google HR"
+                        }
+                      }
+                    },
+                    {
+                      "label": "IBM HR",
+                      "value": {
+                        "input": {
+                          "text": "IBM HR"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Microsoft HR",
+                      "value": {
+                        "input": {
+                          "text": "Microsoft HR"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Accenture HR",
+                      "value": {
+                        "input": {
+                          "text": "Accenture HR"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Cognizant",
+                      "value": {
+                        "input": {
+                          "text": "Cognizant"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "context": {
+              "variables": []
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_6617",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_557",
+            "next_step": "step_510"
+          },
+          {
+            "step": "step_510",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Linkedin : https://www.linkedin.com/in/sirisha-rao-m-a96839204\n\ncontact support : +91 8067218000"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                },
+                {
+                  "options": [
+                    {
+                      "label": "IBM HR",
+                      "value": {
+                        "input": {
+                          "text": "IBM HR"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Accenture HR",
+                      "value": {
+                        "input": {
+                          "text": "Accenture HR"
+                        }
+                      }
+                    },
+                    {
+                      "label": "Microsoft HR",
+                      "value": {
+                        "input": {
+                          "text": "Microsoft HR"
+                        }
+                      }
+                    }
+                  ],
+                  "response_type": "option",
+                  "repeat_on_reprompt": true
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_557"
+                  },
+                  "skill_variable": "Google_HR"
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "not_found",
+                "title": "validation_not_found_handler",
+                "output": {
+                  "generic": [
+                    {
+                      "values": [
+                        {
+                          "text_expression": {
+                            "concat": [
+                              {
+                                "scalar": "I didn't catch that. Select a valid option:"
+                              }
+                            ]
+                          }
+                        }
+                      ],
+                      "response_type": "text",
+                      "selection_policy": "incremental"
+                    }
+                  ]
+                },
+                "handler": "validation_not_found_handler",
+                "resolver": {
+                  "type": "prompt_again"
+                },
+                "next_handler": "validation_not_found_max_tries_handler"
+              },
+              {
+                "type": "not_found_max_tries",
+                "title": "validation_not_found_max_tries_handler",
+                "handler": "validation_not_found_max_tries_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "question": {
+              "entity": "entity_49151",
+              "max_tries": 3
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_510",
+            "next_step": "step_139"
+          },
+          {
+            "step": "step_139",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": ""
+                          },
+                          {
+                            "skill_variable": "IBM_HR"
+                          },
+                          {
+                            "scalar": "Linkedin : https://www.linkedin.com/in/abdul-malik-nizz1\n\ncontact support : +91 8040114047"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential",
+                  "repeat_on_reprompt": false
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_557"
+                  },
+                  "skill_variable": "IBM_HR"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_139",
+            "next_step": "step_813"
+          },
+          {
+            "step": "step_813",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Linkedin : https://www.linkedin.com/in/alekhya-kurmagadda-b4792614a\n\ncontact support : 6566778139\n\n                               : 6566778140"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_557"
+                  },
+                  "skill_variable": "Accenture_HR"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_813",
+            "next_step": "step_348"
+          },
+          {
+            "step": "step_348",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Linkedin : https://www.linkedin.com/in/rajitha-poosa-7a72b421b\n\nEmail : srajitha.poosa3@gmail.com"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_557"
+                  },
+                  "skill_variable": "Cognizant_HR"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_348",
+            "next_step": "step_473"
+          },
+          {
+            "step": "step_473",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Linkedin : https://www.linkedin.com/in/dripta-bhattacharya-56960515a\n\nGlobal support : 0008000404454\n\nMicrosoft Hyderabad : +91 4068484000"
+                          },
+                          {
+                            "skill_variable": "Microsoft_HR"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "context": {
+              "variables": [
+                {
+                  "value": {
+                    "variable": "step_557"
+                  },
+                  "skill_variable": "Microsoft_HR"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_473"
+          }
+        ],
+        "title": "contact HR",
+        "action": "action_40372",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_40372_intent_28617"
+        },
+        "variables": [
+          {
+            "title": "{variable}Linkedin : https://www.linkedin.com/in/abdul-malik-niz",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_139",
+            "data_type": "any"
+          },
+          {
+            "title": "Linkedin : https://www.linkedin.com/in/rajitha-poosa-7a72b421b E",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_348",
+            "data_type": "any"
+          },
+          {
+            "title": "Linkedin : https://www.linkedin.com/in/dripta-bhattacharya-56960",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_473",
+            "data_type": "any"
+          },
+          {
+            "title": "Linkedin : https://www.linkedin.com/in/sirisha-rao-m-a96839204 c",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_510",
+            "data_type": "any"
+          },
+          {
+            "title": "Here is the list of contacts of Recruitment Team...!",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_557",
+            "data_type": "any"
+          },
+          {
+            "title": "Linkedin : https://www.linkedin.com/in/alekhya-kurmagadda-b47926",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_813",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_30319",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_453",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Hey ! Welcome"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_453",
+            "next_step": "step_815"
+          },
+          {
+            "step": "step_815",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "How can i help you ?"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "question": {
+              "free_text": true
+            },
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_815"
+          }
+        ],
+        "title": "Greetings",
+        "action": "action_41661",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_41661_intent_44605"
+        },
+        "variables": [
+          {
+            "title": "Hey ! Welcome",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_453",
+            "data_type": "any"
+          },
+          {
+            "title": "How can i help you ?",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_815",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "fallback",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_450",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Sure! To create a resume, I'll need some information from you. Please provide the following details:\n\n\n  1. *Contact Information:*\n    - Full Name\n    - Phone Number\n    - Email Address\n    - LinkedIn Profile (if applicable)\n    - Address (optional)\n\n\n  2. *Objective or Summary:*\n    - A brief statement about your career goals or a summary of your qualifications.\n\n\n  3."
+                          },
+                          {
+                            "scalar": " *Professional Experience:*\n    - Job Title\n    - Company Name\n    - Location\n    - Dates of Employment\n    - Key Responsibilities and Achievements\n\n\n  4. *Education:*\n    - Degree(s) Earned\n    - School Name\n    - Location\n    - Graduation Date\n\n\n  5. *Skills:*\n    - Relevant skills (e.g., technical skills, languages, certifications)\n\n\n  6. *Projects or Accomplishments:*\n    -"
+                          },
+                          {
+                            "scalar": " Title of the Project/Accomplishment\n    - Description\n\n\n  7. *Certifications or Licenses:*\n    - Name of Certification\n    - Issuing Organization\n    - Date Earned\n\n\n  8. *Volunteer Experience:*\n    - Organization Name\n    - Role\n    - Dates\n    - Key Contributions\n\n\n  9. *Additional Information:*\n    - Any other relevant details (e.g., awards, publications,"
+                          },
+                          {
+                            "scalar": " languages spoken)\n\n\n\nFeel free to provide as much or as little detail as you like, and I can help put it all together into a well-formatted resume!"
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "continue"
+            },
+            "variable": "step_450"
+          }
+        ],
+        "title": "create a resume",
+        "action": "action_8418",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "action_8418_intent_5532"
+        },
+        "variables": [
+          {
+            "title": "Sure! To create a resume, I'll need some information from you. P",
+            "privacy": {
+              "enabled": false
+            },
+            "variable": "step_450",
+            "data_type": "any"
+          }
+        ],
+        "launch_mode": "learning",
+        "next_action": "action_41661",
+        "topic_switch": {
+          "allowed_from": true,
+          "allowed_into": true,
+          "never_return": false
+        },
+        "disambiguation_opt_out": false
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "I'm afraid I don't understand. Please rephrase your question."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_001",
+            "condition": {
+              "lte": [
+                {
+                  "system_variable": "no_action_matches_count"
+                },
+                {
+                  "scalar": 3
+                }
+              ]
+            },
+            "next_step": "step_002"
+          },
+          {
+            "step": "step_002",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": ""
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "invoke_another_action_and_end",
+              "invoke_action": {
+                "action": "fallback",
+                "policy": "default",
+                "parameters": null,
+                "result_variable": "step_002_result_1"
+              }
+            },
+            "variable": "step_002",
+            "condition": {
+              "gt": [
+                {
+                  "system_variable": "no_action_matches_count"
+                },
+                {
+                  "scalar": 3
+                }
+              ]
+            }
+          }
+        ],
+        "title": "No matches",
+        "action": "anything_else",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "expression": "anything_else"
+        },
+        "variables": [
+          {
+            "title": "I am afraid I do not understand what you are asking, please re-p",
+            "variable": "step_001",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_002",
+            "data_type": "any"
+          },
+          {
+            "variable": "step_002_result_1",
+            "data_type": "any"
+          }
+        ],
+        "disambiguation_opt_out": true
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "digression_failure",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Sorry I couldn't confirm if you wanted to return to previous topic, let me connect to an agent."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "digression_failure",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Failed to confirm topic return"
+                }
+              ]
+            },
+            "next_step": "step_001"
+          },
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "I'm afraid I don't understand. I can connect you to an agent."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_001",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Step validation failed"
+                }
+              ]
+            },
+            "next_step": "step_002"
+          },
+          {
+            "step": "step_002",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Sorry I couldn't assist you. I will connect you to an agent right away."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_002",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Agent requested"
+                }
+              ]
+            },
+            "next_step": "step_003"
+          },
+          {
+            "step": "step_003",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "I am afraid I do not understand what you are asking, let me connect you to an agent."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_003",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "No action matches"
+                }
+              ]
+            },
+            "next_step": "step_004"
+          },
+          {
+            "step": "step_004",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "It seems this conversation would be best managed by a human agent. Let me connect you to one of our agents."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_004",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Danger word detected"
+                }
+              ]
+            },
+            "next_step": "step_005"
+          },
+          {
+            "step": "step_005",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "It seems this conversation would be best managed by a human agent. Let me connect you to one of our agents."
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "connect_to_agent",
+              "response": {
+                "transfer_info": {
+                  "target": {}
+                },
+                "agent_available": {
+                  "message": "Let's send you to an available agent."
+                },
+                "agent_unavailable": {
+                  "message": "There are no agents available at this time. When one becomes available, we'll connect you."
+                },
+                "message_to_human_agent": ""
+              }
+            },
+            "variable": "step_005",
+            "condition": {
+              "eq": [
+                {
+                  "system_variable": "fallback_reason"
+                },
+                {
+                  "scalar": "Profanity detected"
+                }
+              ]
+            }
+          }
+        ],
+        "title": "Fallback",
+        "action": "fallback",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "intent": "fallback_connect_to_agent"
+        },
+        "variables": [
+          {
+            "title": "Topic return failed",
+            "variable": "digression_failure",
+            "data_type": "any"
+          },
+          {
+            "title": "I'm afraid I don't understand. I can connect you to an agent.",
+            "variable": "step_001",
+            "data_type": "any"
+          },
+          {
+            "title": "Sorry I couldn't assist you. I will connect you to an agent righ",
+            "variable": "step_002",
+            "data_type": "any"
+          },
+          {
+            "title": "I am afraid I do not understand what you are asking, let me conn",
+            "variable": "step_003",
+            "data_type": "any"
+          },
+          {
+            "title": "It seems this conversation would be best managed",
+            "variable": "step_004",
+            "data_type": "any"
+          },
+          {
+            "title": "Profanity - It seems this conversation",
+            "variable": "step_005",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "run_always",
+        "disambiguation_opt_out": true
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "danger_word_detected",
+            "title": "Connect to agent",
+            "handlers": [],
+            "resolver": {
+              "type": "fallback"
+            },
+            "variable": "danger_word_detected_variable",
+            "condition": {
+              "entity": "danger_words"
+            },
+            "next_step": "profanity_detected"
+          },
+          {
+            "step": "profanity_detected",
+            "title": "Show warning",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text_expression": {
+                        "concat": [
+                          {
+                            "scalar": "Please use appropriate language when interacting with the assistant."
+                          }
+                        ]
+                      }
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [
+              {
+                "type": "max_hits",
+                "handler": "max_hits_handler",
+                "resolver": {
+                  "type": "fallback"
+                }
+              }
+            ],
+            "max_hits": 2,
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "profanity_detected_variable",
+            "condition": {
+              "entity": "profane_words"
+            }
+          }
+        ],
+        "title": "Trigger word detected",
+        "action": "run_always",
+        "boosts": [],
+        "handlers": [],
+        "variables": [
+          {
+            "title": "Profanity detected",
+            "variable": "danger_word_detected_variable",
+            "data_type": "any"
+          },
+          {
+            "title": "Profane word detected",
+            "variable": "profanity_detected_variable",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "anything_else"
+      },
+      {
+        "type": "standard",
+        "steps": [
+          {
+            "step": "step_001",
+            "output": {
+              "generic": [
+                {
+                  "values": [
+                    {
+                      "text": "Welcome, how can I assist you?"
+                    }
+                  ],
+                  "response_type": "text",
+                  "selection_policy": "sequential"
+                }
+              ]
+            },
+            "handlers": [],
+            "resolver": {
+              "type": "end_action"
+            },
+            "variable": "step_001"
+          }
+        ],
+        "title": "Greet customer",
+        "action": "welcome",
+        "boosts": [],
+        "handlers": [],
+        "condition": {
+          "expression": "welcome"
+        },
+        "variables": [
+          {
+            "variable": "step_001",
+            "data_type": "any"
+          }
+        ],
+        "next_action": "action_13128",
+        "disambiguation_opt_out": true
+      }
+    ],
+    "intents": [
+      {
+        "intent": "action_13128_intent_40246",
+        "examples": [
+          {
+            "text": "can you give me a internship"
+          },
+          {
+            "text": "can you suggest me an internship"
+          },
+          {
+            "text": "carrers"
+          },
+          {
+            "text": "give a internship"
+          },
+          {
+            "text": "give me internship"
+          },
+          {
+            "text": "intern"
+          },
+          {
+            "text": "internship details"
+          },
+          {
+            "text": "internships"
+          },
+          {
+            "text": "jobs"
+          },
+          {
+            "text": "search a internship"
+          },
+          {
+            "text": "search an internship"
+          },
+          {
+            "text": "software developer"
+          }
+        ]
+      },
+      {
+        "intent": "action_30319_intent_15060",
+        "examples": [
+          {
+            "text": "build a cover letter"
+          },
+          {
+            "text": "build an cover letter"
+          },
+          {
+            "text": "create a cover letter"
+          },
+          {
+            "text": "make a cover letter"
+          }
+        ]
+      },
+      {
+        "intent": "action_40372_intent_28617",
+        "examples": [
+          {
+            "text": "connect Recriuter"
+          },
+          {
+            "text": "contact HR"
+          },
+          {
+            "text": "find a HR"
+          },
+          {
+            "text": "phone number of recruiter"
+          },
+          {
+            "text": "recriutment team"
+          },
+          {
+            "text": "recruiter contact"
+          },
+          {
+            "text": "recruiter number"
+          },
+          {
+            "text": "what is the contact of HR"
+          }
+        ]
+      },
+      {
+        "intent": "action_41661_intent_44605",
+        "examples": [
+          {
+            "text": "Good Morning"
+          },
+          {
+            "text": "Greetings"
+          },
+          {
+            "text": "Hello"
+          },
+          {
+            "text": "Hey"
+          },
+          {
+            "text": "Hii"
+          },
+          {
+            "text": "namaskar"
+          },
+          {
+            "text": "Namaste"
+          },
+          {
+            "text": "whats up"
+          }
+        ]
+      },
+      {
+        "intent": "action_8418_intent_5532",
+        "examples": [
+          {
+            "text": "build a resume"
+          },
+          {
+            "text": "create a resume"
+          },
+          {
+            "text": "make a resume"
+          },
+          {
+            "text": "please make a resume"
+          },
+          {
+            "text": "please make me a resume"
+          },
+          {
+            "text": "sample resume"
+          },
+          {
+            "text": "simple resume"
+          }
+        ]
+      },
+      {
+        "intent": "fallback_connect_to_agent",
+        "examples": [
+          {
+            "text": "Agent help"
+          },
+          {
+            "text": "Call agent"
+          },
+          {
+            "text": "Can I connect to an agent?"
+          },
+          {
+            "text": "I would like to speak to a human"
+          },
+          {
+            "text": "I would like to speak to someone"
+          }
+        ],
+        "description": "Please transfer me to an agent"
+      }
+    ],
+    "entities": [
+      {
+        "entity": "danger_words",
+        "values": [],
+        "fuzzy_match": false
+      },
+      {
+        "entity": "entity_45145",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Accenture carrer",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Amazon career",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Cognizant carrer",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Google career",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "IBM career",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Microsoft career",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "entity_49151",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Accenture HR",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "IBM HR",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Microsoft HR",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "entity_6617",
+        "values": [
+          {
+            "type": "synonyms",
+            "value": "Accenture HR",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Cognizant",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Google HR",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "IBM HR",
+            "synonyms": []
+          },
+          {
+            "type": "synonyms",
+            "value": "Microsoft HR",
+            "synonyms": []
+          }
+        ],
+        "fuzzy_match": true
+      },
+      {
+        "entity": "profane_words",
+        "values": [],
+        "fuzzy_match": false
+      },
+      {
+        "entity": "sys-yes-no",
+        "values": []
+      }
+    ],
+    "metadata": {
+      "api_version": {
+        "major_version": "v2",
+        "minor_version": "2018-11-08"
+      }
+    },
+    "variables": [
+      {
+        "title": "Accenture career",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "Accenture_career",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "Accenture HR",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "Accenture_HR",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "Addresss",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "Addresss",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "Amazon career",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "Amazon_career",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "Cognizant career",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "Cognizant_career",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "Cognizant HR",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "Cognizant_HR",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "contact HR",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "contact_HR",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "create a resume",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "create_a_resume",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "Date",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "Date",
+        "data_type": "date",
+        "description": ""
+      },
+      {
+        "title": "email address",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "email_address",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "Exit",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "Exit",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "Google career",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "Google_career",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "Google carrers",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "Google_carrers",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "Google HR",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "Google_HR",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "IBM career",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "IBM_career",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "IBM HR",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "IBM_HR",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "Microsoft career",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "Microsoft_career",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "Microsoft HR",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "Microsoft_HR",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "Name",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "Name",
+        "data_type": "string",
+        "description": ""
+      },
+      {
+        "title": "phone number",
+        "privacy": {
+          "enabled": false
+        },
+        "variable": "phone_number",
+        "data_type": "string",
+        "description": ""
+      }
+    ],
+    "data_types": [],
+    "collections": [],
+    "counterexamples": [],
+    "system_settings": {
+      "variable": {
+        "format": {
+          "time": {
+            "pattern": "short"
+          },
+          "currency": {
+            "fraction_digits": 2
+          }
+        }
+      },
+      "off_topic": {
+        "enabled": true
+      },
+      "auto_learn": {
+        "apply": true
+      },
+      "topic_switch": {
+        "enabled": true,
+        "messages": {
+          "enable_confirmation": true,
+          "confirmation_failure": {
+            "generic": [
+              {
+                "values": [
+                  {
+                    "text_expression": {
+                      "concat": [
+                        {
+                          "scalar": "I'm sorry, I did not catch that, please confirm."
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "response_type": "text",
+                "selection_policy": "sequential"
+              }
+            ]
+          },
+          "confirmation_request": {
+            "generic": [
+              {
+                "values": [
+                  {
+                    "text_expression": {
+                      "concat": [
+                        {
+                          "scalar": "Do you want to continue with the previous topic: "
+                        },
+                        {
+                          "system_variable": "digressed_from"
+                        },
+                        {
+                          "scalar": "?"
+                        }
+                      ]
+                    }
+                  }
+                ],
+                "response_type": "text",
+                "selection_policy": "sequential"
+              },
+              {
+                "options": [
+                  {
+                    "label": "Yes",
+                    "value": {
+                      "input": {
+                        "text": "Yes"
+                      }
+                    }
+                  },
+                  {
+                    "label": "No",
+                    "value": {
+                      "input": {
+                        "text": "No"
+                      }
+                    }
+                  }
+                ],
+                "response_type": "option",
+                "repeat_on_reprompt": true
+              }
+            ]
+          }
+        },
+        "max_tries": 3
+      },
+      "generative_ai": {
+        "slot_filling": {
+          "enabled": false
+        }
+      },
+      "disambiguation": {
+        "prompt": "Did you mean:",
+        "enabled": true,
+        "randomize": true,
+        "max_suggestions": 5,
+        "suggestion_text_policy": "title",
+        "none_of_the_above_prompt": "None of the above",
+        "use_connect_to_support_prompt": "Connect to support",
+        "single_answer_clarification_prompt": "Something else"
+      },
+      "search_routing": {
+        "target": "conversational_search"
+      },
+      "spelling_auto_correct": true
+    },
+    "learning_opt_out": false
+  },
+  "description": "created for assistant 50352319-c3b5-40f2-80d7-61875a4f527f",
+  "assistant_id": "50352319-c3b5-40f2-80d7-61875a4f527f",
+  "workspace_id": "6f863ba4-36e0-4996-82fa-e60af14a4a6d",
+  "dialog_settings": {},
+  "next_snapshot_version": "1",
+  "environment_id": "b51702ba-9ba9-455d-99e8-6aa4dcff4deb"
+}
